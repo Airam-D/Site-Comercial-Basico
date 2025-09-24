@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato - Pata Feliz</title>
+    <link rel="stylesheet" href="contato.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <body>
+      <a href="../index.html" class="back-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H109.2l105.7-105.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+          />
+        </svg>
+      </a>
+
+      <div
+        class="cart-icon-container"
+        id="cart-icon-container"
+        style="display: none"
+      >
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-counter">0</span>
+      </div>
+    <header>
+      <div class="container">
+        <h1>Pata Feliz</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html#home">Início</a></li>
+            <li><a href="index.html#produtos">Produtos</a></li>
+            <li><a href="index.html#servicos">Serviços</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-contato">
+        <div class="container">
+          <h2>Entre em Contato</h2>
+          <div class="contato-grid">
+            <div class="contato-info">
+              <h3>Informações da Empresa</h3>
+              <ul>
+                <li><strong>Telefone:</strong> (11) 98765-4321</li>
+                <li><strong>E-mail:</strong> contato@seupetshop.com.br</li>
+                <li>
+                  <strong>Endereço:</strong> Rua dos Animais, 123 - Bairro Amigo
+                  - São Paulo/SP
+                </li>
+                <li>
+                  <strong>Horário:</strong> Segunda a Sexta, das 9h às 18h
+                </li>
+              </ul>
+            </div>
+
+            <div class="contato-form-container">
+              <h3>Envie uma Mensagem</h3>
+              <form class="agendamento-form" action="#" method="post">
+                <div class="form-group">
+                  <label for="nome-completo">Nome Completo:</label>
+                  <input
+                    type="text"
+                    id="nome-completo"
+                    name="nome-completo"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email-contato">E-mail:</label>
+                  <input
+                    type="email"
+                    id="email-contato"
+                    name="email-contato"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="assunto">Assunto:</label>
+                  <input type="text" id="assunto" name="assunto" required />
+                </div>
+                <div class="form-group">
+                  <label for="mensagem">Mensagem:</label>
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn-agendar">
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Pata Feliz. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".agendamento-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const mensagem = document.createElement("div");
+          mensagem.className = "mensagem-sucesso";
+          mensagem.textContent = "Mensagem Enviada";
+
+          document.body.appendChild(mensagem);
+
+          setTimeout(function () {
+            mensagem.remove();
+          }, 3000);
+        });
+    </script>
+  </body>
+</html>

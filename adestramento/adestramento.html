@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adestramento - Pata Feliz</title>
+    <link rel="stylesheet" href="adestramento.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <body>
+      <a href="../index.html" class="back-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H109.2l105.7-105.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+          />
+        </svg>
+      </a>
+
+      <div
+        class="cart-icon-container"
+        id="cart-icon-container"
+        style="display: none"
+      >
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-counter">0</span>
+      </div>
+    <header>
+      <div class="container">
+        <h1>Pata Feliz</h1>
+        <nav>
+          <ul>
+            <li><a href="../index.html#home">Início</a></li>
+            <li><a href="../index.html#produtos">Produtos</a></li>
+            <li><a href="../index.html#servicos">Serviços</a></li>
+            <li><a href="../index.html#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="pagina-servico">
+        <div class="container">
+          <h2>Adestramento e Comportamento</h2>
+          <p class="servico-descricao">
+            Nossos adestradores são especialistas em diferentes técnicas,
+            prontos para ajudar seu pet a desenvolver habilidades e ter um
+            comportamento equilibrado.
+          </p>
+
+          <div class="doutores-grid">
+            <div class="doutor-card">
+              <img src="Guilherme Alves.png" alt="Guilherme Alves" />
+              <h3>Guilherme Alves</h3>
+              <p class="especializacao">
+                Especialização: **Adestramento Básico**
+              </p>
+              <p class="doutor-descricao">
+                Focado em comandos essenciais como "senta", "fica" e "aqui".
+                Ideal para filhotes e cães com pouca experiência.
+              </p>
+            </div>
+
+            <div class="doutor-card">
+              <img src="Mariana Freitas.png" alt="Mariana Freitas" />
+              <h3>Mariana Freitas</h3>
+              <p class="especializacao">
+                Especialização: **Comportamento e Socialização**
+              </p>
+              <p class="doutor-descricao">
+                Ajuda a resolver problemas de comportamento, como ansiedade de
+                separação, agressividade e medos.
+              </p>
+            </div>
+
+            <div class="doutor-card">
+              <img src="Rodrigo Pires.png" alt="Rodrigo Pires" />
+              <h3>Rodrigo Pires</h3>
+              <p class="especializacao">
+                Especialização: **Adestramento Avançado**
+              </p>
+              <p class="doutor-descricao">
+                Treinamento para tarefas complexas e preparação para
+                competições, como agilidade e obediência avançada.
+              </p>
+            </div>
+          </div>
+
+          <div class="agendamento-container">
+            <h3>Agende uma Sessão</h3>
+            <form class="agendamento-form" action="#" method="post">
+              <div class="form-group">
+                <label for="pet-nome">Nome do Pet:</label>
+                <input type="text" id="pet-nome" name="pet-nome" required />
+              </div>
+
+              <div class="form-group">
+                <label for="tutor-nome">Seu Nome:</label>
+                <input type="text" id="tutor-nome" name="tutor-nome" required />
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="adestrador">Escolha o Adestrador:</label>
+                <select id="adestrador" name="adestrador" required>
+                  <option value="">Selecione um especialista</option>
+                  <option value="guilherme">
+                    Guilherme Alves (Adestramento Básico)
+                  </option>
+                  <option value="mariana">
+                    Mariana Freitas (Comportamento)
+                  </option>
+                  <option value="rodrigo">
+                    Rodrigo Pires (Adestramento Avançado)
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required />
+              </div>
+
+              <div class="form-group">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" name="hora" required />
+              </div>
+
+              <button type="submit" class="btn-agendar">Agendar Agora</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Pata Feliz. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelector(".agendamento-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const mensagem = document.createElement("div");
+          mensagem.className = "mensagem-sucesso";
+          mensagem.textContent = "Agendamento Feito";
+
+          document.body.appendChild(mensagem);
+
+          setTimeout(function () {
+            mensagem.remove();
+          }, 3000);
+        });
+    </script>
+  </body>
+</html>
